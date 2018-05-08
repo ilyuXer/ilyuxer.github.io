@@ -21,9 +21,16 @@
     }
 </style>
 <body>
+    <script>
+	document.onkeypress = func;
+    function func(e) {
+		document.getElementById('chat_embed').style.width = prompt('width?', document.getElementById('chat_embed').style.width);
+    }
+    </script>
+    
     <div>
         <iframe
-            src="http://player.twitch.tv/?channel=Nytick"
+            src="https://player.twitch.tv/?channel=Nytick"
             scrolling="no"
             allowfullscreen="true">
         </iframe>
