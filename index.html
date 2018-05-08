@@ -25,17 +25,11 @@
         <iframe src="https://player.twitch.tv/?channel=Nytick"></iframe>
     </div>
     
-    <div id="twitch-embed"></div>
-
-    <!-- Load the Twitch embed script -->
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
-
-    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
-    <script type="text/javascript">
-      new Twitch.Embed("twitch-embed", {
-        width: 358,
-        height: 100%,
-        channel: "HoneyMad"
-      });
-    </script>
+    <iframe frameborder="0"
+        scrolling="yes"
+        id="chat_embed"
+        src="http://www.twitch.tv/embed/HoneyMad/chat"
+        height=""
+        width="358">
+    </iframe>
 </body>
