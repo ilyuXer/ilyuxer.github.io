@@ -1,0 +1,76 @@
+<!DOCTYPE>
+<script src= "http://player.twitch.tv/js/embed/v1.js"></script>
+
+<style>
+    body, html {
+      overflow: hidden;
+    }
+
+    div, plyer {
+      width: -webkit-calc(100% - 358px);
+      width: -moz-calc(100% - 358px);
+      width: calc(100% - 358px);
+      height: 100%;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+</style>
+<body>
+<script>
+	function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+	}
+	
+	document.body.onload = function() {
+		var tmp = getCookie('wdth');
+		if (tmp != "") {
+			document.getElementById('chat_embed').style.width = tmp + 'px';
+			document.getElementById('plyer').style.width = document.body.clientWidth - tmp + 'px';
+		}
+	}
+	
+	document.onkeypress = func;
+    function func(e) {
+		var tmp = document.getElementById('chat_embed').style.width.substr(0,document.getElementById('chat_embed').style.width.length - 2);
+		var wdth = prompt('width?', tmp);
+		if (wdth != null) {
+			document.getElementById('chat_embed').style.width = wdth + 'px';
+			document.getElementById('plyer').style.width = document.body.clientWidth - wdth + 'px';
+			
+			var date = new Date(new Date().getTime() + 365 * 24 * 60 * 60 * 1000);
+			document.cookie = "wdth=" + wdth + ";expires=" + date.toUTCString() + ";path=/";
+		}
+    }
+</script>
+    <div id="plyer"></div>
+	<script type="text/javascript">
+		var options = {
+			channel: "Nytick",
+		};
+		var player = new Twitch.Player("plyer", options);
+	</script>
+    
+    <iframe frameborder="0" style="width:358px; height:100%; position:fixed; right:0px; top:0px;"
+        scrolling="yes"
+        id="chat_embed"
+        src="https://www.twitch.tv/embed/HoneyMad/chat">
+    </iframe>
+</body>
