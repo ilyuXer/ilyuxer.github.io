@@ -1,5 +1,5 @@
 <!DOCTYPE>
-<script src= "http://player.twitch.tv/js/embed/v1.js"></script>
+<script src= "https://player.twitch.tv/js/embed/v1.js"></script>
 
 <style>
     body, html {
@@ -59,14 +59,10 @@
 			document.cookie = "wdth=" + wdth + ";expires=" + date.toUTCString() + ";path=/";
 		}
     }
-</script>
-    <div id="plyer"></div>
-	<script type="text/javascript">
-		var options = {
-			channel: "Nytick",
-		};
-		var player = new Twitch.Player("plyer", options);
-	</script>
+<iframe
+    src="http://player.twitch.tv/?nytick&muted=false"
+    allowfullscreen="true">
+</iframe>
     
     <iframe frameborder="0" style="width:358px; height:100%; position:fixed; right:0px; top:0px;"
         scrolling="yes"
