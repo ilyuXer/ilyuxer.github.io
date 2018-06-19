@@ -4,27 +4,18 @@
     body, html {
       overflow: hidden;
     }
-
-    div, plyer {
-      width: -webkit-calc(100% - 358px);
-      width: -moz-calc(100% - 358px);
-      width: calc(100% - 358px);
-      height: 100%;
-      position: fixed;
-      left: 0;
-      top: 0;
-    }
-
-    iframe {
-      border: none;
-      width: 100%;
-      height: 100%;
-    }
 </style>
 <body>
 <iframe
     src="https://player.twitch.tv/?channel=nytick&muted=false"
-    allowfullscreen="true">
+    allowfullscreen="true"
+    style=" width: -webkit-calc(100% - 358px);
+            width: -moz-calc(100% - 358px);
+            width: calc(100% - 358px);
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;">
 </iframe>
     
     <iframe frameborder="0" style="width:358px; height:100%; position:fixed; right:0px; top:0px;"
